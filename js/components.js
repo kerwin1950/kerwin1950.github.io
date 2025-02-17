@@ -56,7 +56,7 @@ const components = {
       <meta name="keywords" content="Kerwin Xue, 个人主页, 开发者, 技术博客, 编程, 代码, 项目, 简历" />
       <meta name="author" content="Kerwin Xue" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-      <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+      <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
       <title>Kerwin Xue's Page</title>
       <script>
     (function() {
