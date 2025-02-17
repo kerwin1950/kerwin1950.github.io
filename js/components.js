@@ -8,12 +8,12 @@ const components = {
     const nav = document.createElement("nav");
     nav.className = "site-nav";
     nav.innerHTML = `
-              <a href="index.html" class="home">Kerwin Xue</a>
+              <a href="/index.html" class="home">Kerwin Xue</a>
               <div class="nav-right">
-                <a href="my_cv.html">个人简历</a>
-                <a href="my_projects.html">我的项目</a>
-                <a href="my_blog.html">博客</a>
-                <a href="my_gallery.html">相册</a>
+                <a href="/my_cv.html">个人简历</a>
+                <a href="/my_projects.html">我的项目</a>
+                <a href="/my_blog.html">博客</a>
+                <a href="/my_gallery.html">相册</a>
                 <i id="theme-icon" class="fas fa-moon"></i>
             </div>
           `;
@@ -56,7 +56,7 @@ const components = {
       <meta name="keywords" content="Kerwin Xue, 个人主页, 开发者, 技术博客, 编程, 代码, 项目, 简历" />
       <meta name="author" content="Kerwin Xue" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-      <link rel="icon" type="image/x-icon" href="../img/favicon.ico" />
+      <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
       <title>Kerwin Xue's Page</title>
       <script>
     (function() {
