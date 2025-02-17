@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark-theme">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerwin's Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+    /* 动态主题核心 */
+    :root {
+        /* 深色模式 - 夜影蓝 */
+        --bg-primary: #1a1d24;
+        --bg-secondary: #2d313a;
+        --text-primary: rgba(255, 255, 255, 0.95);
+        --text-secondary: rgba(255, 255, 255, 0.7);
+        --accent-color: #7fa8d4;
+        --border-color: rgba(255, 255, 255, 0.1);
+        --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
+        --radius: 12px;
+        --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        --glass-bg: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    }
+
+    .light-mode {
+        /* 浅色模式 - 晨雾灰 */
+        --bg-primary: #f8f9fa;
+        --bg-secondary: #f0f3f5;
+        --text-primary: #2d3436;
+        --text-secondary: #57606f;
+        --accent-color: #4a6679;
+        --border-color: rgba(0, 0, 0, 0.08);
+        --shadow: 0 4px 24px rgba(178, 190, 195, 0.1);
+        --glass-bg: linear-gradient(135deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01));
+    }
+
+    /* 基础样式 */
+    body {
+        font-family: 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+        padding: 2rem;
+        transition: background var(--transition), color var(--transition);
+    }
+
+    .resume-wrapper {
+        display: grid;
+        grid-template-columns: 1.1fr 2fr;
+        gap: 2rem;
+        max-width: 1280px;
+        margin: 0 auto;
+        align-items: start;
+    }
+
+    /* 侧边栏样式 */
+    .sidebar, .main-content {
+        margin-top: 80px;
+        margin-bottom: 30px;
+        background: var(--bg-secondary);
+        padding: 2rem;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        border: 1px solid var(--border-color);
+        transition: all var(--transition);
+    }
+
+    /* 联系信息 */
+    .contact-item {
+        color: var(--text-secondary);
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.8rem;
+        border-radius: calc(var(--radius) - 4px);
+        transition: all var(--transition);
+        font-size: 0.9rem;
+    }
+
+    .contact-item:hover {
+        background: rgba(var(--accent-color), 0.1);
+        color: var(--accent-color);
+        transform: translateX(5px);
+    }
+
+    .contact-item i {
+        width: 20px;
+        text-align: center;
+        color: var(--text-secondary);
+        transition: color var(--transition);
+    }
+
+    .contact-item:hover i {
+        color: var(--accent-color);
+    }
+
+    /* 卡片系统 */
+    .card {
+        margin-bottom: 1.5rem;
+        padding: 1.5rem;
+        background: var(--glass-bg);
+        border: 1px solid var(--border-color);
+        border-radius: var(--radius);
+        backdrop-filter: blur(8px);
+        transition: all var(--transition);
+    }
+
+    .card:hover {
+        box-shadow: 0 8px 32px var(--shadow);
+        transform: translateY(-2px);
+    }
+
+    /* 时间线项目 */
+    .timeline-item {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 5px;
+        width: 8px;
+        height: 8px;
+        background: var(--accent-color);
+        border-radius: 50%;
+    }
+
+    /* 打印按钮 */
+    #print-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 24px;
+        background: var(--accent-color);
+        color: white;
+        border: none;
+        border-radius: 50px;
+        cursor: pointer;
+        box-shadow: var(--shadow);
+        z-index: 1000;
+        transition: all var(--transition);
+    }
+
+    #print-btn:hover {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
+
+    /* 响应式优化 */
+    @media (max-width: 768px) {
+        .resume-wrapper {
+            grid-template-columns: 1fr;
+        }
+        .sidebar, .main-content {
+            margin-top: 40px;
+            padding: 1.5rem;
+        }
+    }
+
+    /* 主题切换按钮 */
+    #theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        padding: 10px;
+        background: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    </style>
+</head>
+<body>
+    <!-- 主题切换按钮 -->
+    <button id="theme-toggle" title="切换主题">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <div class="resume-wrapper">
+        <!-- 侧边栏 -->
+        <aside class="sidebar">
+            <h2>薛金伟</h2>
+            <h5 style="color: var(--text-secondary)">
+                <a href="./home.html">Kerwin Xue</a>
+            </h5>
+            <section class="contact-info">
+                <div class="contact-item" id="wechat-contact">
+                    <i class="fab fa-weixin"></i><span>WeChat: JimX1950</span>
+                </div>
+                <a href="mailto:kerwin1950@gmail.com" class="contact-item">
+                    <i class="far fa-envelope"></i>
+                    <span>kerwin1950@gmail.com</span>
+                </a>
+                <a href="https://github.com/kerwin1950" class="contact-item" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                    <span>github.com/kerwin1950</span>
+                </a>
+                <a href="https://linkedin.com/in/kerwinxue2024" class="contact-item" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-linkedin"></i>
+                    <span>linkedin.com/in/kerwinxue2024</span>
+                </a>
+            </section>
+            <br />
+            <!-- 教育经历 -->
+            <section>
+                <div class="card">
+                    <h3>教育背景</h3>
+                    <h4>中国科学院大学</h4>
+                    <ul>
+                        <li><strong>计算机技术</strong> 硕士 2017-2020</li>
+                        <p>GPA 3.59/4.0</p>
+                        <p>国科大优秀学生干部 / 院长奖学金</p>
+                        <li><strong>核心课程:</strong></li>
+                        <p>计算机视觉/深度学习/数据挖掘</p>
+                        <br>
+                        <h4>天津职业技术师范大学</h4>
+                        <li><strong>自动化</strong> 本科 2012-2016</li>
+                        <p>TI杯电子设计竞赛一等奖</p>
+                        <p>多次校级奖学金</p>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 技术能力 -->
+            <section>
+                <div class="card">
+                    <h3>技术能力</h3>
+                    <ul>
+                        <li> <strong>编程语言:</strong></li>
+                        <p>C（AVR单片机开发）、C++（医疗系统开发）、Python（数据处理）</p>
+                        <li><strong>嵌入式开发：</strong></li>
+                        <p>嵌入式C编程与调试（AVRStudio/Proteus）</p>
+                        <li><strong>计算机视觉：</strong></li>
+                        <p>OpenCV（图像处理/动作识别）</p>
+                        <li><strong>前端开发：</strong>   </li>
+                        <p>HTML5/CSS3/JavaScript（基础网页开发）</p>
+                        <li><strong>领域专长：</strong> </li>
+                        <p>图像处理（OpenCV）、肌电信号处理（sEMG）、机器人运动控制</p>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 其他 -->
+            <section>
+                <div class="card">
+                    <h3>其他</h3>
+                    <ul>
+                        <li><strong>语言能力:</strong></li>
+                        <p>英语（雅思 6.0）、德语（A1）</p>
+                        <li><strong>教学资质：</strong></li>
+                        <p>教师资格证、电工证</p>
+                    </ul>
+                </div>
+            </section>
+        </aside>
+
+        <!-- 主要内容 -->
+        <main class="main-content">
+            <!-- 自我介绍 -->
+            <section class="introduction card">
+                <h2>自我介绍</h2>
+                <p>
+                    Hi,我是薛金伟，曾在头部医疗企业从事磁共振成像系统的软件开发，研究生期间研发肌电控制康复机器人系统。
+                    现为深圳理工大学图书馆提供技术支撑，负责网站维护与微信公众号运营。
+                </p>
+            </section>
+
+            <!-- 工作经历 -->
+            <section class="card">
+                <h2>工作经历</h2>
+                <div class="timeline-item">
+                    <h3>深圳市联影高端医疗装备创新研究院</h3>
+                    <ul>
+                        <li><strong>软件开发工程师</strong> | 2020.07 - 2021.06</li>
+                        <p>参与7T磁共振成像系统软件开发(C++/Visual Studio)</p>
+                        <p>执行底层驱动测试，确保系统稳定运行</p>
+                    </ul>
+                </div>
+                <br>
+                <div class="timeline-item">
+                    <h3>深圳理工大学图书馆</h3>
+                    <ul>
+                        <li><strong>技术支持</strong> | 2021.11 - 至今</li>
+                        <p>维护图书馆网站（HTML/CSS/JavaScript）及运维系统</p>
+                        <p>运营微信公众号，策划发布活动信息</p>
+                    </ul>
+                </div>
+                <br>
+                <div class="timeline-item">
+                    <h3>Ergofino GmbH</h3>
+                    <ul><li><strong>仓管员（国际化协作经验）</strong> | 2023.04 - 2023.12</li></ul>
+                </div>
+                <br>
+                <div class="timeline-item">
+                    <h3>图宾根中文学校</h3>
+                    <ul><li><strong>兼职教师</strong> | 2024.09 - 至今</li></ul>
+                </div>
+            </section>
+
+            <!-- 项目经历 -->
+            <section class="card">
+                <h2>项目经历</h2>
+                <div class="timeline-item">
+                    <h3>7T磁共振成像系统开发</h3>
+                    <p><strong>联影医疗</strong> | C++/Visual Studio</p>
+                    <p>开发检查列表组件后端逻辑</p>
+                    <p>设计实时性测试框架，验证底层驱动稳定性</p>
+                </div>
+                <br>
+                <div class="timeline-item">
+                    <h3>可穿戴智慧控制多功能机器手及临床应用</h3>
+                    <p><strong>中科院深港创新圈项目</strong> | C++/OpenCV</p>
+                    <p>基于OpenCV构建动作捕捉平台，实现残肢表面肌电信号与视觉数据融合</p>
+                    <p>开发虚拟现实训练系统，支持肌电识别，项目成果发表于BME2019</p>
+                </div>
+                <br>
+                <div class="timeline-item">
+                    <h3>肌电控制双臂机器人开发</h3>
+                    <p><strong>中科院神经工程中心</strong> | C++/MATLAB</p>
+                    <p>使用 MATLAB 解码肌肉电信号并控制机器人运动，实现实验室演示</p>
+                </div>
+                <br>
+                <div class="timeline-item">
+                    <h3>轮式机器人超声导航系统</h3>
+                    <p><strong>中科院智能仿生中心</strong> | PCB设计/C代码</p>
+                    <p>设计超声测距阵列硬件电路，编写信号处理算法</p>
+                </div>
+            </section>
+
+            <!-- 学术成果 -->
+            <section class="card">
+                <h2>学术成果</h2>
+                <div class="timeline-item">
+                    <h3>发明专利</h3>
+                    <ul>
+                        <p><strong>第一发明人</strong></p>
+                        <li>基于表面肌电与深度图像的虚拟现实康复训练系统<br />专利申请号：CN201910548545.9
+                            <a href="https://patents.google.com/patent/CN110298286B/zh" style="font-style:italic;text-decoration:underline;">
+                                专利详情
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>会议论文</h3>
+                    <ol class="ol-numbers">
+                        <li>面向前臂截肢者的虚拟现实康复训练方法研究，2019中国生物医学工程大会暨新医疗峰会（BME2019）</li>
+                        <li><a href="https://ieeexplore.ieee.org/abstract/document/8857067" target="_blank" rel="noopener noreferrer">
+                            Assessment of Lumbar Muscles Coordinated Activity Based on High-Density Surface Electromyography: A Pilot Study, 41th IEEE EMBC, 2019</a>
+                        </li>
+                        <li><a href="https://ieeexplore.ieee.org/abstract/document/8612195" target="_blank" rel="noopener noreferrer">
+                            Research on Recognition of Forearm sEMG Signal Based on Different Motion Modes, IEEE CBS, 2018</a>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- 打印按钮 -->
+    <button id="print-btn"><i class="fas fa-file-pdf"></i> 导出简历</button>
+
+    <script>
+    // 主题切换功能
+    const themeToggle = document.getElementById('theme-toggle');
+    themeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('light-mode');
+        const isLight = document.documentElement.classList.contains('light-mode');
+        themeToggle.innerHTML = isLight ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        
+        // 保存用户偏好
+        localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+
+    // 初始化主题
+    const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    if (savedTheme === 'light') {
+        document.documentElement.classList.add('light-mode');
+        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+
+    // 打印功能
+    document.getElementById('print-btn').addEventListener('click', window.print);
+
+    // 二维码弹窗逻辑
+    document.getElementById('wechat-contact').addEventListener('click', (e) => {
+        e.preventDefault();
+        const modal = document.createElement('div');
+        modal.innerHTML = `
+            <div class="modal-overlay">
+                <div class="modal-content">
+                    <img src="../img/wechatQR.jpg" alt="微信二维码" width="200">
+                </div>
+            </div>
+        `;
+        modal.querySelector('.modal-overlay').addEventListener('click', () => modal.remove());
+        document.body.appendChild(modal);
+    });
+    </script>
+</body>
+</html>
