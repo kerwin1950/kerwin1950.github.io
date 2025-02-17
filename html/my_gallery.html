@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>  
+    <link
+      rel="preload"
+      href="https://cdn.jsdelivr.net/gh/kerwin1950/photo-gallery@main/images.json"
+      as="fetch"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+    <div class="main-content">
+    <!-- 相册容器 -->
+    <div id="gallery" class="gallery">
+      <div id="loading" style="display: none">加载中...</div>
+    </div>
+
+    <!-- Lightbox 结构 -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <span class="prev" onclick="event.stopPropagation();changeImage(-1)"
+        >&#10094;</span
+      >
+      <img id="lightbox-img" src="" alt="Lightbox Image" />
+      <span class="next" onclick="event.stopPropagation();changeImage(1)"
+        >&#10095;</span
+      >
+    </div>
+    </div>
+    <script src="../js/components.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/gallery.js"></script>
+    <script src="../js/lightbox.js"></script>
+  </body>
+</html>

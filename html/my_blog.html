@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <style>
+    .recipe-card {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--bg-secondary);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      /* overflow:auto ; */
+    }
+
+    .recipe-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+
+    .card-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .card-header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .divider {
+      height: 2px;
+      background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--text-primary) 50%,
+        transparent 100%
+      );
+      margin: 1.5rem 0;
+    }
+
+    .ingredient-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .ingredient-card {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ingredient-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+    .step-list {
+      counter-reset: step-counter;
+    }
+    .tip-badge {
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      display: inline-block;
+      margin: 1rem 0;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+
+      .recipe-card {
+        padding: 1.5rem;
+        border-radius: 15px;
+      }
+
+      .card-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+  <body>
+    <br />
+    <br />
+    <div class="recipe-card">
+      <div class="card-header">
+        <h1>
+          锅包肉<br /><span style="font-size: 1.2rem"
+            >Crispy Sweet & Sour Pork</span
+          >
+        </h1>
+        <div class="divider"></div>
+      </div>
+
+      <div class="ingredient-grid">
+        <div class="ingredient-card">
+          食材：<i class="fas fa-drumstick-bite"></i>
+          猪里脊肉 300克、 玉米淀粉200克、白醋 90g、白糖 90g 番茄酱 90g、盐
+          2g、食用油 适量（油炸用）、胡椒粉 2g、可选装饰：胡萝卜丝、白芝麻
+        </div>
+      </div>
+      <div class="step-list">
+        <div class="step-item">
+          处理淀粉：将玉米淀粉倒入碗中，加清水没过淀粉，静置10分钟，不要搅拌，待淀粉自然沉淀。
+        </div>
+        <div class="step-item">
+          准备肉片：猪里脊肉切成大片（厚度约0.5厘米，如筷子头宽度）。
+          肉片加少许盐、胡椒粉，抓匀腌制10分钟。</div>
+        <div class="step-item">
+          调制淀粉糊：将静置后的淀粉水小心倒掉，留下底部沉淀的湿淀粉（呈非牛顿流体状）。
+          将湿淀粉与肉片混合，充分抓匀，确保每片肉裹满淀粉糊。然后倒入少许食用油，防止炸制的时候肉片粘连。
+        </div>
+        <div class="step-item">
+          炸制肉片：油温烧至120℃，逐片下入肉片，少量多次炸至定型、表面微黄后捞出。
+          油温升至180℃，倒入肉片复炸30秒至金黄酥脆，捞出沥油。
+        </div>
+        <div class="step-item">
+          调制料汁：碗中加入白醋、白糖、番茄酱（比例1:1:1），搅拌均匀。
+          可根据肉量调整用量，确保每片肉能裹上料汁。
+        </div>
+        <div class="step-item">
+          裹汁出锅：锅中留少许底油，倒入料汁中小火熬煮，搅拌至冒大泡转小泡时（糖醋汁浓稠）。
+          快速倒入炸好的肉片，大火翻炒均匀裹汁。
+          关火后撒白芝麻、胡萝卜丝点缀即可。
+        </div>
+      </div>
+
+      <div class="tip-badge">
+        <i class="fas fa-lightbulb"></i>
+        关键技巧:炸制肉片时，肉能立马浮起来说明油温合适。可用颠勺的方式听声判断锅包肉的脆度。
+      </div>
+    </div>
+    <div class="recipe-card">
+      <div class="card-header">
+        <h1>
+          临沂炒鸡<br /><span style="font-size: 1.2rem"
+            >Linyi Fried Chicken</span
+          >
+        </h1>
+        <div class="divider"></div>
+      </div>
+
+      <div class="ingredient-grid">
+        <div class="ingredient-card">
+          食材：<i class="fas fa-drumstick-bite"></i>
+          主料：整鸡一只（或用鸡腿代替）、青红辣椒（根据个人口味）<br>
+          干料：姜片、葱段、蒜瓣、花椒20粒、八角2个、香叶2片、白芷2片。<br>
+          酱料：生抽、老抽、豆瓣酱、甜面酱、黄酒、耗油<br>
+          其他：盐、白糖、味精、香醋、花生油
+        </div>
+      </div>
+      <div class="step-list">
+        <div class="step-item">
+          处理鸡肉：新鲜整鸡洗净，沥干水分，切块。鸡块不要泡水，否则炒不干，但如果是冷冻的鸡肉需要焯水去腥。
+        </div>
+        <div class="step-item">
+          炒鸡肉：锅中倒油，先放入姜片炒到姜片焦黄，加入鸡块，大火翻炒至鸡肉紧缩、表面微黄。<br>
+        再加入八角、花椒、香叶和白芷葱段、蒜瓣和干辣椒。
+        沿锅边烹入料酒，加入甜面酱、黄豆酱、生抽、老抽、蚝油，翻炒均匀。</div>
+        <div class="step-item">
+          炖煮收汁：倒入开水（水量与鸡肉持平），加入盐、白糖、香醋，盖上锅盖中小火炖煮20-30分钟。
+          可以放入洗干净的鸡内脏一起炖煮。
+          开盖后大火收汁，待汤汁浓稠时加入青红辣椒和葱段翻炒至断生。</div>
+        <div class="step-item">
+          出锅装盘：最后调入少许味精，翻炒均匀即可出锅。
+        </div>
+      </div>
+      <div class="tip-badge">
+        <i class="fas fa-lightbulb"></i>
+        关键技巧:多放姜片，鸡肉要炒干再进行下一步。
+      </div>
+    </div>
+    
+    <script>
+      // 添加图片懒加载和交互动画
+      document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".ingredient-card");
+  cards.forEach((card) => {
+    card.addEventListener("mouseenter", () => {
+      card.style.transform = "rotate(2deg) scale(1.05)";
+    });
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "rotate(0) scale(1)";
+    });
+  });
+});
+    </script>
+
+    <script src="../js/components.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>
