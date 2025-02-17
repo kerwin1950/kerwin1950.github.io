@@ -2,6 +2,7 @@
 <html lang="zh-CN">
   <head>
     <link rel="stylesheet" href="css/style.css" />
+    <title>Kerwin's Blog</title>
   </head>
   <style>
     .recipe-card {
@@ -52,17 +53,17 @@
     }
 
     .ingredient-card {
-  background: rgba(255, 255, 255, 0.3);
-  padding: 1rem;
-  border-radius: 12px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+      background: rgba(255, 255, 255, 0.3);
+      padding: 1rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.ingredient-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-}
+    .ingredient-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
     .step-list {
       counter-reset: step-counter;
     }
@@ -115,7 +116,8 @@
         </div>
         <div class="step-item">
           准备肉片：猪里脊肉切成大片（厚度约0.5厘米，如筷子头宽度）。
-          肉片加少许盐、胡椒粉，抓匀腌制10分钟。</div>
+          肉片加少许盐、胡椒粉，抓匀腌制10分钟。
+        </div>
         <div class="step-item">
           调制淀粉糊：将静置后的淀粉水小心倒掉，留下底部沉淀的湿淀粉（呈非牛顿流体状）。
           将湿淀粉与肉片混合，充分抓匀，确保每片肉裹满淀粉糊。然后倒入少许食用油，防止炸制的时候肉片粘连。
@@ -153,9 +155,9 @@
       <div class="ingredient-grid">
         <div class="ingredient-card">
           食材：<i class="fas fa-drumstick-bite"></i>
-          主料：整鸡一只（或用鸡腿代替）、青红辣椒（根据个人口味）<br>
-          干料：姜片、葱段、蒜瓣、花椒20粒、八角2个、香叶2片、白芷2片。<br>
-          酱料：生抽、老抽、豆瓣酱、甜面酱、黄酒、耗油<br>
+          主料：整鸡一只（或用鸡腿代替）、青红辣椒（根据个人口味）<br />
+          干料：姜片、葱段、蒜瓣、花椒20粒、八角2个、香叶2片、白芷2片。<br />
+          酱料：生抽、老抽、豆瓣酱、甜面酱、黄酒、耗油<br />
           其他：盐、白糖、味精、香醋、花生油
         </div>
       </div>
@@ -164,13 +166,15 @@
           处理鸡肉：新鲜整鸡洗净，沥干水分，切块。鸡块不要泡水，否则炒不干，但如果是冷冻的鸡肉需要焯水去腥。
         </div>
         <div class="step-item">
-          炒鸡肉：锅中倒油，先放入姜片炒到姜片焦黄，加入鸡块，大火翻炒至鸡肉紧缩、表面微黄。<br>
-        再加入八角、花椒、香叶和白芷葱段、蒜瓣和干辣椒。
-        沿锅边烹入料酒，加入甜面酱、黄豆酱、生抽、老抽、蚝油，翻炒均匀。</div>
+          炒鸡肉：锅中倒油，先放入姜片炒到姜片焦黄，加入鸡块，大火翻炒至鸡肉紧缩、表面微黄。<br />
+          再加入八角、花椒、香叶和白芷葱段、蒜瓣和干辣椒。
+          沿锅边烹入料酒，加入甜面酱、黄豆酱、生抽、老抽、蚝油，翻炒均匀。
+        </div>
         <div class="step-item">
           炖煮收汁：倒入开水（水量与鸡肉持平），加入盐、白糖、香醋，盖上锅盖中小火炖煮20-30分钟。
           可以放入洗干净的鸡内脏一起炖煮。
-          开盖后大火收汁，待汤汁浓稠时加入青红辣椒和葱段翻炒至断生。</div>
+          开盖后大火收汁，待汤汁浓稠时加入青红辣椒和葱段翻炒至断生。
+        </div>
         <div class="step-item">
           出锅装盘：最后调入少许味精，翻炒均匀即可出锅。
         </div>
@@ -180,20 +184,20 @@
         关键技巧:多放姜片，鸡肉要炒干再进行下一步。
       </div>
     </div>
-    
+
     <script>
       // 添加图片懒加载和交互动画
       document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".ingredient-card");
-  cards.forEach((card) => {
-    card.addEventListener("mouseenter", () => {
-      card.style.transform = "rotate(2deg) scale(1.05)";
-    });
-    card.addEventListener("mouseleave", () => {
-      card.style.transform = "rotate(0) scale(1)";
-    });
-  });
-});
+        const cards = document.querySelectorAll(".ingredient-card");
+        cards.forEach((card) => {
+          card.addEventListener("mouseenter", () => {
+            card.style.transform = "rotate(2deg) scale(1.05)";
+          });
+          card.addEventListener("mouseleave", () => {
+            card.style.transform = "rotate(0) scale(1)";
+          });
+        });
+      });
     </script>
 
     <script src="js/components.js"></script>

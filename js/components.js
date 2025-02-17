@@ -57,7 +57,7 @@ const components = {
       <meta name="author" content="Kerwin Xue" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
       <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
-      <title>Kerwin Xue's Page</title>
+     
       <script>
     (function() {
       const savedTheme = localStorage.getItem("theme") || "dark"; // 默认暗色模式
