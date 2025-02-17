@@ -129,14 +129,26 @@
   opacity: 0.9;
   color: rgba(var(--accent-color), 0.8);
 }
-
+@media (max-width:766px) {
+      .resume-wrapper{
+        display:grid;
+        grid-template-columns: 1fr;
+        gap:1rem;
+      }
+      .sidebar{
+        order: 1; 
+      }
+      .main-content {
+        order: 2;
+      }
+    }
 /* 打印样式 */
 @media print {
   /* 隐藏不需要的元素 */
   #print-btn,
   .modal-overlay,
   .timeline-item::before,
-  .site-nav,
+  .site-nav,.introduction,
   footer {
     display: none;
   }
