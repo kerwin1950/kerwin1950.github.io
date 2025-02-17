@@ -129,6 +129,7 @@
   opacity: 0.9;
   color: rgba(var(--accent-color), 0.8);
 }
+
 /* 打印样式 */
 @media print {
   /* 隐藏不需要的元素 */
@@ -140,32 +141,40 @@
     display: none;
   }
 
-  /* 调整字体和颜色 */
+  /* 让所有内容可见，不受滚动影响 */
+  * {
+    overflow: visible !important;
+  }
+
+  /* 针对 WebKit 浏览器（Chrome, Edge, Safari）隐藏滚动条 */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 统一字体和颜色 */
   body {
     font-size: 12pt;
     color: #000;
     background: #fff;
     margin: 0;
     padding: 0;
-    box-shadow: none;
     line-height: 1.2;
   }
 
-  /* 调整链接样式 */
-  a,i,span {
+  /* 去掉链接和图标的默认样式 */
+  a, i, span {
     text-decoration: none;
     color: #000;
-    background: #fff;
-    box-shadow: none;
+    background: none;
   }
 
-  /* 调整联系方式（检查是否为 .contact-item） */
+  /* 调整联系方式的样式 */
   .contact-item {
     margin: 0;
     padding: 10px;
   }
 
-  /* 分别调整各个块的样式 */
+  /* 让主要内容适应打印格式 */
   .timeline-item,
   .sidebar,
   .main-content,
@@ -175,27 +184,26 @@
     width: 100%;
     margin: 0;
     padding: 0;
+    page-break-inside: avoid;
   }
 
-  /* 调整图片样式 */
+  /* 图片自适应 */
   img {
     max-width: 100%;
     height: auto;
   }
+
+  /* 让简历布局更适合打印 */
   .resume-wrapper {
-    display: grid!important;
-    /* 左侧窄，右侧宽，比如1:3的比例 */
-    grid-template-columns: 1fr 3fr!important;
-    /* 让两栏高度一致 */
+    display: grid !important;
+    grid-template-columns: 1fr 3fr !important; /* 左侧1份，右侧3份 */
     align-items: stretch;
     min-height: 100vh;
     margin: 0;
     padding: 0;
   }
-
-  
- 
 }
+
 
     </style>
   </head>
