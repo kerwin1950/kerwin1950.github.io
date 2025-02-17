@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kerwin's Resume</title>
+    <title >Kerwin's Resume</title>
     <link rel="stylesheet" href="css/style.css" />
 
     <style>
@@ -142,13 +142,17 @@
         order: 2;
       }
     }
+    /* 正常浏览时隐藏 */
+  .print-header {
+    display: none;
+  }
 /* 打印样式 */
 @media print {
   /* 隐藏不需要的元素 */
   #print-btn,
   .modal-overlay,
   .timeline-item::before,
-  .site-nav,.introduction,
+  .site-nav,.introduction,.contact-info,.no-print,.sidebar,.card,.main-content,
   footer {
     display: none;
   }
@@ -170,60 +174,100 @@
     background: #fff;
     margin: 0;
     padding: 0;
-    line-height: 1.2;
+   
   }
 
-  /* 去掉链接和图标的默认样式 */
-  a, i, span {
-    text-decoration: none;
-    color: #000;
-    background: none;
-  }
-
-  /* 调整联系方式的样式 */
-  .contact-item {
-    margin: 0;
-    padding: 10px;
-  }
-
-  /* 让主要内容适应打印格式 */
-  .timeline-item,
-  .sidebar,
-  .main-content,
-  .card {
-    border: none;
-    box-shadow: none;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    page-break-inside: avoid;
-  }
-
-  /* 图片自适应 */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-
-  /* 让简历布局更适合打印 */
-  .resume-wrapper {
-    display: grid !important;
-    grid-template-columns: 1fr 3fr !important; /* 左侧1份，右侧3份 */
-    align-items: stretch;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-  }
+  .print-header {
+      display: block;
+    }
+    .print-contact {
+      display: flex;
+      justify-content: center;
+      gap: 16pt;
+      font-size: 10pt;
+      border-bottom: 2pt solid #666;
+      padding-bottom: 10pt;
+    }
+    .print-card {
+      /* gap: 10pt; */
+      border-bottom: 2pt solid #666;
+      padding-bottom: 5pt;
+    }
+ 
 }
-
-
     </style>
   </head>
   <body>
+    <div class="print-header">
+      <h2 style="text-align: center;">薛金伟 </h2><h5 style="text-align: center;">Kerwin Xue</h5>
+      <div class="print-contact">
+        <span>微信: JimX1950</span>|
+        <span>邮箱: kerwin1950@gmail.com</span>|
+        <span>GitHub: github.com/kerwin1950</span>
+      </div>
+    
+      <div class="print-card">
+      <h4>中国科学院大学</h4>
+           <p><strong>·计算机技术</strong> 
+           <span> | 硕士 2017-2020 </span>
+           <span> | GPA 3.59/4.0 </span>
+          <span> | 国科大优秀学生干部 / 院长奖学金</span></p>
+          <p><strong>核心课程:</strong>
+          <span> | 计算机视觉/深度学习/数据挖掘<span></p>
+      <h4>天津职业技术师范大学</h4>
+            <p><strong>·自动化</strong>
+            <span> | 本科 2012-2016 </span>
+            <span> | TI杯电子设计竞赛一等奖 </span>
+            <span> | 多次校级奖学金</span></p>
+            <br>
+          </div>
+          <div class="print-card">
+      <h3>工作经历</h3>
+      <h4>·深圳市联影高端医疗装备创新研究院</h4>
+          <p><strong>软件开发工程师</strong> | 2020.07 - 2021.06</p>
+          <p>参与7T磁共振成像系统软件开发(C++/Visual Studio)</p>
+          <p>执行底层驱动测试，确保系统稳定运行</p>
+      <h4>·深圳理工大学图书馆</h4>
+          <p><strong>技术支持</strong> | 2021.11 - 至今</p>
+          <p>维护图书馆网站（HTML/CSS/JavaScript）及运维系统</p>
+          <p>运营微信公众号，策划发布活动信息</p>
+      <h4>·Ergofino GmbH<span style="font-weight: normal;"> | 仓管员（国际化协作经验） | 2023.04 - 2023.12</span></h4>
+      <h4>·图宾根中文学校<span style="font-weight: normal;"> | 兼职教师 | 2024.09 - 至今</span></h4>
+      <br>
+      </div>
+          <!-- 项目经历 -->
+      <div class="print-card">
+      <h3>项目经历</h3>
+      <h4>·7T磁共振成像系统开发<span style="font-weight: normal;"> (联影医疗| C++/Visual Studio)</span></h4>
+          <p>开发检查列表组件后端逻辑</p>
+          <p>设计实时性测试框架，验证底层驱动稳定性</p>
+      <h4>·可穿戴智慧控制多功能机器手及临床应用<span style="font-weight: normal;"> (中科院深港创新圈项目 | C++/OpenCV)</span></h4>
+          <p>基于OpenCV构建动作捕捉平台，实现残肢表面肌电信号与视觉数据融合</p>
+          <p>开发虚拟现实训练系统，支持肌电识别，项目成果发表于BME2019</p>
+      <h4>·肌电控制双臂机器人开发<span style="font-weight: normal;"> (中科院神经工程中心 | C++/MATLAB)</span></h4>
+          <p>使用 MATLAB 解码肌肉电信号并控制机器人运动，实现实验室演示</p>
+      <h4>·轮式机器人超声导航系统<span style="font-weight: normal;"> (中科院智能仿生中心 | PCB设计/C代码)<span></span></h4> 
+          <p>设计超声测距阵列硬件电路，编写信号处理算法</p>
+          <br>
+      </div>
+          <!-- 学术成果 -->
+      <h3>学术成果</h3>
+      <h4>·发明专利</h4>
+          <span>基于表面肌电与深度图像的虚拟现实康复训练系统 专利申请号：CN201910548545.9
+           </span>
+      <h4>·会议论文</h4>
+           <p>1. 面向前臂截肢者的虚拟现实康复训练方法研究，2019中国生物医学工程大会暨新医疗峰会（BME2019）
+           </p>
+            <p>2. Assessment of Lumbar Muscles Coordinated Activity Based on High-Density Surface Electromyography: A Pilot Study, 41th IEEE
+                  EMBC, 2019
+            </p>
+            <p>3. Research on Recognition of Forearm sEMG Signal Based on Different Motion Modes, IEEE CBS, 2018
+            </p>
+    </div>
     <div class="resume-wrapper">
       <!-- 侧边栏 -->
       <aside class="sidebar">
-        <h2>薛金伟</h2>
+        <h2 >薛金伟</h2>
         <h5 >
           <a class="cv-link" href="index.html" >Kerwin Xue</a>
         </h5>
@@ -246,7 +290,7 @@
         </section>
         <br />
         <!-- 教育经历 -->
-        <section>
+        <section >
           <div class="card">
             <h3>教育背景</h3>
             <h4>中国科学院大学</h4>
@@ -366,19 +410,12 @@
           <div class="timeline-item">
             <h3>肌电控制双臂机器人开发</h3>
             <p><strong>中科院神经工程中心</strong> | C++/MATLAB</p>
-          
-              <p>
-                使用 MATLAB 解码肌肉电信号并控制机器人运动，实现实验室演示
-              </p>
-            
+            <p>使用 MATLAB 解码肌肉电信号并控制机器人运动，实现实验室演示</p>
           </div>
           <br>
           <div class="timeline-item">
-            <h3>轮式机器人超声导航系统</h3>
-            <p><strong>中科院智能仿生中心</strong> | PCB设计/C代码</strong>
-            
-              <p>设计超声测距阵列硬件电路，编写信号处理算法</p>
-            
+            <h3>轮式机器人超声导航系统<span>(中科院智能仿生中心 | PCB设计/C代码)</span></h3>
+            <p>设计超声测距阵列硬件电路，编写信号处理算法</p>
           </div>
         </section>
 
