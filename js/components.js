@@ -10,10 +10,10 @@ const components = {
     nav.innerHTML = `
               <a href="/index.html" class="home">Kerwin Xue</a>
               <div class="nav-right">
-                <a href="/html/my_cv.html">个人简历</a>
-                <a href="/html/my_projects.html">我的项目</a>
-                <a href="/html/my_blog.html">博客</a>
-                <a href="/html/my_gallery.html">相册</a>
+                <a href="/my_cv.html">个人简历</a>
+                <a href="/my_projects.html">我的项目</a>
+                <a href="/my_blog.html">博客</a>
+                <a href="/my_gallery.html">相册</a>
                 <i id="theme-icon" class="fas fa-moon"></i>
             </div>
           `;
