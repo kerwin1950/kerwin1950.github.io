@@ -3,13 +3,30 @@
   <head>
     <link rel="stylesheet" href="css/style.css" />
     <title>Kerwin's Projects</title>
-   
+   <style>
+    .card {
+      max-width: 800px;
+      margin: 2rem auto;
+      background: var(--bg-secondary);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      /* overflow:auto ; */
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+   </style>
   </head>
   <body>
    
     <div class="main-content">
     <div id="loading" style="display: none">加载中...</div>
-    <div class="welcome-text">
+    <div class="card">
       <h3>
         页面正在开发ing
       </h3>
