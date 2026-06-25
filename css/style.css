@@ -1,5 +1,5 @@
-:root {
-  /* 深色模式 - 夜影蓝 */
+﻿:root {
+  /* 娣辫壊妯″紡 - 澶滃奖钃?*/
   --bg-primary: #1a1d24;
   --bg-secondary: #2d313a;
   --text-primary: rgba(255, 255, 255, 0.95);
@@ -11,14 +11,14 @@
   --transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   --glass-bg: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
 
-  /* 错误提示（暗色模式） */
+  /* 閿欒鎻愮ず锛堟殫鑹叉ā寮忥級 */
   --error-text: #ff7675;
   --error-bg: rgba(255, 118, 117, 0.12);
   --error-border: rgba(255, 118, 117, 0.25);
 }
 
 .light-mode {
-  /* 浅色模式 - 晨雾灰 */
+  /* 娴呰壊妯″紡 - 鏅ㄩ浘鐏?*/
   --bg-primary: #f8f9fa;
   --bg-secondary: #f0f3f5;
   --text-primary: #2d3436;
@@ -28,13 +28,13 @@
   --shadow: 0 4px 24px rgba(178, 190, 195, 0.1);
   --glass-bg: linear-gradient(135deg, rgba(0,0,0,0.02), rgba(0,0,0,0.01));
 
-  /* 错误提示（浅色模式） */
+  /* 閿欒鎻愮ず锛堟祬鑹叉ā寮忥級 */
   --error-text: #d63031;
   --error-bg: rgba(255, 218, 218, 0.9);
   --error-border: rgba(214, 48, 49, 0.2);
 }
 
-/* 公共样式 */
+/* 鍏叡鏍峰紡 */
 * {
   margin: 0;
   padding: 0;
@@ -48,7 +48,7 @@ html, body {
   overflow-y: auto;
 }
 
-/* body 的基础样式 */
+/* body 鐨勫熀纭€鏍峰紡 */
 body {
   min-height: 100vh;
   display: flex;
@@ -58,23 +58,23 @@ body {
   background: var(--bg-primary);
   transition: background 0.3s ease, color 0.3s ease;
   font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
-  visibility: hidden; /* 页面加载前隐藏内容 */
+  visibility: hidden; /* 椤甸潰鍔犺浇鍓嶉殣钘忓唴瀹?*/
 }
 body.loaded {
-  visibility: visible; /* 加载完成后显示 */
+  visibility: visible; /* 鍔犺浇瀹屾垚鍚庢樉绀?*/
 }
-/* 主要内容区域占据剩余空间 */
+/* 涓昏鍐呭鍖哄煙鍗犳嵁鍓╀綑绌洪棿 */
 .main-content {
   flex: 1;
 }
 
-/* loading 状态 */
+/* loading 鐘舵€?*/
 #loading {
-  position: fixed;         /* 固定定位，参照视口 */
-  top: 50%;                /* 距离顶部 50% */
-  left: 50%;               /* 距离左侧 50% */
-  transform: translate(-50%, -50%); /* 居中 */
-  color: var(--accent-color); /* 使用强调色 */
+  position: fixed;         /* 鍥哄畾瀹氫綅锛屽弬鐓ц鍙?*/
+  top: 50%;                /* 璺濈椤堕儴 50% */
+  left: 50%;               /* 璺濈宸︿晶 50% */
+  transform: translate(-50%, -50%); /* 灞呬腑 */
+  color: var(--accent-color); /* 浣跨敤寮鸿皟鑹?*/
   padding: 10px 20px;
   border-radius: 5px;
   font-size: 16px;
@@ -82,14 +82,14 @@ body.loaded {
   z-index: 2000;
 }
 
-/* 导航栏 */
-/* 固定在顶部 */
+/* 瀵艰埅鏍?*/
+/* 鍥哄畾鍦ㄩ《閮?*/
 .site-nav {
   height: 60px;
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* 左右分布 */
+  justify-content: space-between; /* 宸﹀彸鍒嗗竷 */
   position: fixed;
   top: 0;
   left: 0;
@@ -100,7 +100,7 @@ body.loaded {
   box-sizing: border-box;
 }
 
-/* 子元素宽度控制 */
+/* 瀛愬厓绱犲搴︽帶鍒?*/
 .site-nav > .home {
   flex: 0 0 auto;
 }
@@ -117,21 +117,21 @@ body.loaded {
 .site-nav i {
   font-size: 20px;
   cursor: pointer;
-  margin-left: 10px; /* 图标间距 */
+  margin-left: 10px; /* 鍥炬爣闂磋窛 */
   color: var(--text-secondary);
 }
 .site-nav i:hover {
   color: var(--text-primary) !important;
 }
 
-/* 右侧导航容器 */
+/* 鍙充晶瀵艰埅瀹瑰櫒 */
 .nav-right {
   flex: 0 0 auto;
   display: flex;
   gap: 15px;
   align-items: center;
 }
-/* 导航链接 */
+/* 瀵艰埅閾炬帴 */
 .nav-right a {
   font-size: 18px;
   padding: 8px 12px;
@@ -148,7 +148,7 @@ body.loaded {
   border-bottom: 3px solid var(--accent-color);
 }
 
-/* 自适应 */
+/* 鑷€傚簲 */
 @media screen and (max-width: 600px) {
   .site-nav {
     flex-direction: row;
@@ -159,7 +159,7 @@ body.loaded {
   .site-nav a {
     text-decoration: none;
   }
-   /* 调整导航项布局 */
+   /* 璋冩暣瀵艰埅椤瑰竷灞€ */
    .nav-right {
     flex-direction: row;
     flex-wrap: wrap;
@@ -183,7 +183,7 @@ body.loaded {
   width: 100%;
   padding: 20px;
   text-align: center;
-  margin-top: auto; /* 推至底部 */
+  margin-top: auto; /* 鎺ㄨ嚦搴曢儴 */
 }
 .site-footer i {
   margin: 0 10px;
@@ -194,7 +194,7 @@ body.loaded {
   color: var(--text-primary);
 }
 
-/* 高亮文本 */
+/* 楂樹寒鏂囨湰 */
 .highlight {
   background: var(--glass-bg);
   color: inherit;
@@ -203,7 +203,7 @@ body.loaded {
   box-shadow: 0 0 2px var(--shadow);
 }
 
-/* 主页风格 */
+/* 涓婚〉椋庢牸 */
 .welcome-text {
   position: absolute;
   left: 50%;
@@ -213,6 +213,150 @@ body.loaded {
   max-width: 800px;
   text-align: center;
   padding: 20px;
+}
+
+.welcome-text h1 {
+  font-size: 3rem;
+  margin-bottom: 0.4rem;
+}
+
+.welcome-text h2 {
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.welcome-text p {
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+.welcome-text a,
+.resume-page a {
+  color: var(--accent-color);
+}
+
+.eyebrow {
+  color: var(--accent-color);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.home-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1.5rem;
+}
+
+.home-actions a {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  padding: 10px 14px;
+  background: var(--glass-bg);
+}
+
+.resume-page {
+  width: min(1180px, calc(100% - 32px));
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.resume-sidebar,
+.resume-main {
+  display: grid;
+  gap: 18px;
+}
+
+.resume-page .card {
+  margin-bottom: 0;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.profile-card h1,
+.resume-hero h1 {
+  font-size: 2.3rem;
+  margin-bottom: 0.4rem;
+}
+
+.role,
+.meta {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.resume-page h2 {
+  margin-bottom: 1rem;
+}
+
+.resume-page h3 {
+  margin-bottom: 0.4rem;
+}
+
+.resume-page p {
+  line-height: 1.75;
+  margin-bottom: 0.8rem;
+}
+
+.resume-list {
+  margin-left: 1.2rem;
+}
+
+.resume-list li {
+  list-style: disc;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 0.55rem;
+}
+
+@media (max-width: 820px) {
+  .resume-page {
+    grid-template-columns: 1fr;
+  }
+
+  .home-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media print {
+  .site-nav,
+  .site-footer,
+  #print-btn {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  .resume-page {
+    width: 100%;
+    display: block;
+    margin: 0;
+  }
+
+  .resume-page .card {
+    box-shadow: none;
+    border: 0;
+    padding: 0 0 12pt;
+    background: #fff;
+    page-break-inside: avoid;
+  }
 }
 
 .my-pic {
@@ -241,81 +385,8 @@ body.loaded {
   }
 }
 
-/* 相册风格 */
-/* 相册容器 */
-.gallery {
-  margin-top: 70px; /* 避免与导航栏重叠 */
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
-  padding: 20px;
-}
-.gallery img {
-  width: 100%;
-  height: 180px; /* 固定高度 */
-  object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-.gallery img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-}
-@media screen and (max-width: 600px) {
-  .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-}
 
-/* Lightbox 样式 */
-.lightbox {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(0, 0, 0, 0.8);
-  display: none; /* 默认隐藏 */
-  align-items: center;
-  justify-content: center;
-  z-index: 1001;
-}
-.lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  border-radius: 10px;
-}
-.lightbox .prev,
-.lightbox .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: auto;
-  padding: 16px;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-  transition: 0.3s;
-  user-select: none;
-  -webkit-user-select: none;
-}
-.lightbox .prev {
-  left: 10%;
-  transform: translateX(-50%) translateY(-50%);
-}
-.lightbox .next {
-  right: 10%;
-  transform: translateX(50%) translateY(-50%);
-}
-.lightbox .prev:hover,
-.lightbox .next:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-/* 错误提示样式 */
+/* 閿欒鎻愮ず鏍峰紡 */
 .error {
   color: var(--error-text);
   text-align: center;
@@ -325,4 +396,52 @@ body.loaded {
   background: var(--error-bg);
   border: 1px solid var(--error-border);
   border-radius: 6px;
+}
+/* === Section Title (H3) === */
+.card h3 {
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  font-weight: 650;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Icon for section headings */
+.card h3 i {
+  color: rgba(var(--accent-color), 0.9);
+  font-size: 1.2rem;
+}
+
+/* === EDU & EXPERIENCE title === */
+.info-block h4 {
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* details line under h4 */
+.info-detail {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.4rem;
+}
+
+/* bullet list used inside experience, projects */
+.info-list {
+  margin-left: 1rem;
+  list-style-type: disc;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+}
+
+/* Subtle faded items for old experience (matching Background Skills) */
+.subtle {
+  color: rgba(120,120,120,0.9);
+  font-style: italic;
 }
