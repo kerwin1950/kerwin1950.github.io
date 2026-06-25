@@ -2,15 +2,16 @@ const components = {
   nav() {
     if (document.querySelector(".site-nav")) return;
 
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
     const nav = document.createElement("nav");
     nav.className = "site-nav";
     nav.innerHTML = `
       <a href="index.html" class="home">Jim Xue</a>
       <div class="nav-right">
-        <a href="my_cv.html">Resume</a>
-        <a href="my_projects.html">Projects</a>
-        <a href="my_blog.html">Blog</a>
-        <i id="theme-icon" class="fas fa-moon" title="Toggle theme"></i>
+        <a href="my_cv.html" class="${currentPage === "my_cv.html" ? "active" : ""}">Resume</a>
+        <a href="my_projects.html" class="${currentPage === "my_projects.html" ? "active" : ""}">Projects</a>
+        <i id="theme-icon" class="fas fa-moon" title="Toggle theme" role="button" aria-label="Toggle theme"></i>
       </div>
     `;
     document.body.insertBefore(nav, document.body.firstChild);
@@ -62,48 +63,59 @@ const components = {
     `
     );
   },
+
+  canvas() {
+    if (document.getElementById("bg-canvas")) return;
+    const canvas = document.createElement("canvas");
+    canvas.id = "bg-canvas";
+    canvas.setAttribute("aria-hidden", "true");
+    document.body.insertBefore(canvas, document.body.firstChild);
+  },
 };
 
 function adjustLayout() {
   const nav = document.querySelector(".site-nav");
   const footer = document.querySelector(".site-footer");
-  const mainContent = document.querySelector(".main-content, .home-page");
+  const mainContent = document.querySelector(".main-content, .home-page, .resume-page, .projects-page");
 
   if (nav && mainContent) {
-    mainContent.style.marginTop = `${nav.offsetHeight + 20}px`;
+    mainContent.style.marginTop = `${nav.offsetHeight + 24}px`;
   }
 
   if (footer && mainContent) {
-    mainContent.style.marginBottom = `${footer.offsetHeight + 20}px`;
+    mainContent.style.marginBottom = `${footer.offsetHeight + 24}px`;
   }
 }
 
 function setupThemeToggle() {
   const themeIcon = document.getElementById("theme-icon");
-  const body = document.body;
+  const root = document.documentElement;
   if (!themeIcon) return;
 
   const savedTheme = localStorage.getItem("theme") || "dark";
   if (savedTheme === "light") {
-    body.classList.add("light-mode");
+    root.classList.add("light-mode");
     themeIcon.classList.replace("fa-moon", "fa-sun");
   }
 
   themeIcon.addEventListener("click", () => {
-    body.classList.toggle("light-mode");
+    root.classList.toggle("light-mode");
 
-    if (body.classList.contains("light-mode")) {
+    if (root.classList.contains("light-mode")) {
       themeIcon.classList.replace("fa-moon", "fa-sun");
       localStorage.setItem("theme", "light");
     } else {
       themeIcon.classList.replace("fa-sun", "fa-moon");
       localStorage.setItem("theme", "dark");
     }
+
+    window.dispatchEvent(new Event("themechange"));
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   components.head();
+  components.canvas();
   components.nav();
   components.footer();
   adjustLayout();

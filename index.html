@@ -5,29 +5,65 @@
     <title>Jim Xue | Kerwin Xue</title>
   </head>
   <body>
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
     <main class="home-page">
-      <div class="my-pic">
-        <img src="img/me.jpg" alt="Jim Xue" />
-      </div>
-      <section class="welcome-text">
-        <p class="eyebrow">Hong Kong Plexon Limited</p>
-        <h1>Jim Xue</h1>
-        <h2>Technical Support Engineer</h2>
-        <p>
-          I support neuroscience research equipment across installation,
-          troubleshooting, customer training, repair coordination, and
-          communication with overseas manufacturers.
-        </p>
-        <p>
-          中文名：薛金伟 · 英文工作名：Jim · Personal site:
-          <a href="https://kerwinxue.top">kerwinxue.top</a>
-        </p>
-        <div class="home-actions">
-          <a href="my_cv.html">View Resume</a>
-          <a href="mailto:jim@plexon.com.hk">Contact</a>
+      <section class="hero">
+        <div class="hero-avatar reveal">
+          <div class="avatar-ring">
+            <img src="img/me.jpg" alt="Jim Xue" />
+          </div>
+        </div>
+
+        <div class="hero-content">
+          <p class="eyebrow reveal">Hong Kong Plexon Limited</p>
+          <h1 class="gradient-text reveal">Jim Xue</h1>
+          <h2 class="hero-role reveal">Technical Support Engineer</h2>
+          <p class="hero-desc reveal">
+            I support neuroscience research equipment across installation,
+            troubleshooting, customer training, repair coordination, and
+            communication with overseas manufacturers.
+          </p>
+          <p class="hero-meta reveal">
+            中文名：薛金伟 · 英文工作名：Jim ·
+            <a href="https://kerwinxue.top">kerwinxue.top</a>
+          </p>
+
+          <div class="skill-tags reveal">
+            <span>Neuroscience Equipment</span>
+            <span>Technical Support</span>
+            <span>Troubleshooting</span>
+            <span>Customer Training</span>
+            <span>Plexon · SiNAPS</span>
+          </div>
+
+          <div class="home-actions reveal">
+            <a href="my_cv.html" class="btn btn-primary">
+              <i class="fas fa-file-alt"></i> View Resume
+            </a>
+            <a href="mailto:jim@plexon.com.hk" class="btn btn-ghost">
+              <i class="fas fa-envelope"></i> Contact
+            </a>
+          </div>
         </div>
       </section>
+
+      <section class="quick-links">
+        <a href="my_cv.html" class="link-card reveal">
+          <div class="link-card-icon"><i class="fas fa-user-tie"></i></div>
+          <h3>Resume</h3>
+          <p>Professional experience in neuroscience equipment support, field troubleshooting, and customer communication.</p>
+          <span class="link-card-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="my_projects.html" class="link-card reveal">
+          <div class="link-card-icon"><i class="fas fa-code"></i></div>
+          <h3>Projects</h3>
+          <p>Personal tools and side projects built from real-world support workflows.</p>
+          <span class="link-card-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+        </a>
+      </section>
     </main>
+
     <script src="js/components.js"></script>
     <script src="js/script.js"></script>
   </body>

@@ -2,41 +2,41 @@
 <html lang="zh-CN">
   <head>
     <link rel="stylesheet" href="css/style.css" />
-    <title>Kerwin's Projects</title>
-   <style>
-    .card {
-      max-width: 800px;
-      margin: 2rem auto;
-      background: var(--bg-secondary);
-      backdrop-filter: blur(10px);
-      border-radius: 20px;
-      padding: 2.5rem;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      position: relative;
-      /* overflow:auto ; */
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow);
-    }
-   </style>
+    <title>Jim Xue | Projects</title>
   </head>
   <body>
-   
-    <div class="main-content">
-    <div id="loading" style="display: none">加载中...</div>
-    <div class="card">
-      <h3>
-        页面正在开发ing
-      </h3>
-      <a href="https://kerwin1950.github.io/Cat_and_Rat2.0/" target="_blank">
-        试玩 Cat and Rat 游戏
-    </a>
-    
-    </div>
-  </div>
-  
+    <main class="projects-page">
+      <header class="page-header reveal">
+        <p class="eyebrow">Side Projects</p>
+        <h1 class="gradient-text">Projects</h1>
+        <p>Tools and experiments built from real support workflows — turning scattered field issues into structured, reusable systems.</p>
+      </header>
+
+      <div class="project-grid">
+        <article class="project-card reveal">
+          <span class="project-badge">Game · JavaScript</span>
+          <h3><i class="fas fa-gamepad"></i> Cat and Rat 2.0</h3>
+          <p>
+            A browser-based game project. Built as a fun side experiment — try it out and see the cat chase the rat!
+          </p>
+          <a href="https://kerwin1950.github.io/Cat_and_Rat2.0/" target="_blank" rel="noopener noreferrer">
+            Play Demo <i class="fas fa-external-link-alt"></i>
+          </a>
+        </article>
+
+        <article class="project-card reveal">
+          <span class="project-badge">In Progress</span>
+          <h3><i class="fas fa-tools"></i> Support Workflow Tools</h3>
+          <p>
+            Personal tools for managing Cases, Projects, Tasks, logs, attachments, and expense records — designed around real technical support workflows.
+          </p>
+          <span style="color: var(--text-secondary); font-size: 0.9rem;">
+            <i class="fas fa-hammer"></i> More coming soon
+          </span>
+        </article>
+      </div>
+    </main>
+
     <script src="js/components.js"></script>
     <script src="js/script.js"></script>
   </body>
