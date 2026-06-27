@@ -637,6 +637,14 @@ body.loaded {
   margin-bottom: 0.55rem;
 }
 
+.resume-ordered {
+  margin-left: 1.2rem;
+}
+
+.resume-ordered li {
+  list-style: decimal;
+}
+
 .timeline-item {
   position: relative;
   padding-left: 16px;

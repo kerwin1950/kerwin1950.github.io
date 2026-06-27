@@ -24,7 +24,7 @@ const components = {
     footer.className = "site-footer";
     footer.innerHTML = `
       <div>
-        <a href="mailto:jim@plexon.com.hk" aria-label="Email">
+        <a href="mailto:xuejinwei1950@foxmail.com" aria-label="Email">
           <i class="fas fa-envelope"></i>
         </a>
         <a href="https://github.com/kerwin1950" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
